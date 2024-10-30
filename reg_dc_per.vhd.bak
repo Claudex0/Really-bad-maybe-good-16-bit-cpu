@@ -1,0 +1,32 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.numeric_std.all; 
+use IEEE.STD_LOGIC_UNSIGNED.all;
+
+
+entity reg_dc_per is
+	port --define inputs and outputs
+	(	D_in:in std_logic_vector(7 downto 0);
+		clk,load:in std_logic;
+		reg_out:out std_logic_vector(7 downto 0)
+	);
+end reg_dc_per;
+
+architecture behavior of reg_dc_per is
+
+begin
+
+process(clk)
+variable store: std_logic_vector (7 downto 0);
+begin
+	if(rising_edge(clk)) then
+		if(load='1') then
+			store:=D_in;
+			reg_out<=store;
+		else
+			store:=store;
+		end if;
+	end if;
+end process;
+end behavior;		

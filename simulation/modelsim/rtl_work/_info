@@ -1,0 +1,1025 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Uni/Year4/EBAES/assignments/RBCPU_16bit/simulation/modelsim
+Eaccumulator
+Z1 w1641377144
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 16
+R0
+Z4 8C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/accumulator.vhd
+Z5 FC:/Uni/Year4/EBAES/assignments/RBCPU_16bit/accumulator.vhd
+l0
+L3 1
+VaIL7hhO10HJ6H2jU:RKI72
+!s100 Yg1b]Lm36BMB9F16GMgC[1
+Z6 OV;C;2020.1;71
+32
+Z7 !s110 1642857628
+!i10b 1
+Z8 !s108 1642857628.000000
+Z9 !s90 -reportprogress|300|-work|work|C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/accumulator.vhd|
+Z10 !s107 C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/accumulator.vhd|
+!i113 1
+Z11 o-work work
+Z12 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+DEx4 work 11 accumulator 0 22 aIL7hhO10HJ6H2jU:RKI72
+!i122 16
+l13
+L12 23
+VYZA^dloZAV_5PC>=_QE1:1
+!s100 7`[1O?<zEDf948Z4jn:TF3
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ealu
+Z13 w1641252062
+Z14 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z15 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z16 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+R2
+R3
+!i122 17
+R0
+Z17 8C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/ALU.vhd
+Z18 FC:/Uni/Year4/EBAES/assignments/RBCPU_16bit/ALU.vhd
+l0
+L6 1
+V_=f5^kz4FhC42L^njQ^Ia2
+!s100 8GeaKIPXJl_107gX8]WUn3
+R6
+32
+Z19 !s110 1642857629
+!i10b 1
+Z20 !s108 1642857629.000000
+Z21 !s90 -reportprogress|300|-work|work|C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/ALU.vhd|
+Z22 !s107 C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/ALU.vhd|
+!i113 1
+R11
+R12
+Acomb
+R14
+R15
+R16
+R2
+R3
+DEx4 work 3 alu 0 22 _=f5^kz4FhC42L^njQ^Ia2
+!i122 17
+l17
+L16 50
+VbbS`XKDVkgBhj;NMHD=I:2
+!s100 k9NC=eoS`5bFf:HJWLT6R3
+R6
+32
+R19
+!i10b 1
+R20
+R21
+R22
+!i113 1
+R11
+R12
+Ealumux0
+Z23 w1642852248
+R15
+R16
+R14
+R2
+R3
+!i122 18
+R0
+Z24 8C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux0.vhd
+Z25 FC:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux0.vhd
+l0
+L6 1
+V[?JQ?IPHL@ci94]=2B2eC3
+!s100 MiX<SP3LS18;QUmi@Na<=1
+R6
+32
+R19
+!i10b 1
+R20
+Z26 !s90 -reportprogress|300|-work|work|C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux0.vhd|
+Z27 !s107 C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux0.vhd|
+!i113 1
+R11
+R12
+Acomb
+R15
+R16
+R14
+R2
+R3
+DEx4 work 7 alumux0 0 22 [?JQ?IPHL@ci94]=2B2eC3
+!i122 18
+l16
+L15 11
+VFE171h00?dX;YdX2lIMPJ0
+!s100 Qa76JOQg5GY;0QTdCiWFD1
+R6
+32
+R19
+!i10b 1
+R20
+R26
+R27
+!i113 1
+R11
+R12
+Ealumux1
+Z28 w1641222182
+R15
+R16
+R14
+R2
+R3
+!i122 19
+R0
+Z29 8C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux1.vhd
+Z30 FC:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux1.vhd
+l0
+L6 1
+VafXJ^DOikk[A9]j4m9T9L2
+!s100 ;QJa[i5gSGGf:`ZdcPnU]3
+R6
+32
+R19
+!i10b 1
+R20
+Z31 !s90 -reportprogress|300|-work|work|C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux1.vhd|
+Z32 !s107 C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux1.vhd|
+!i113 1
+R11
+R12
+Acomb
+R15
+R16
+R14
+R2
+R3
+DEx4 work 7 alumux1 0 22 afXJ^DOikk[A9]j4m9T9L2
+!i122 19
+l15
+Z33 L14 11
+V]:Vg7G?RUaVn@dgehaX@]3
+!s100 zcDV_TiFcRH;@37c^n1m;2
+R6
+32
+R19
+!i10b 1
+R20
+R31
+R32
+!i113 1
+R11
+R12
+Ecomparator_dc
+Z34 w1641382758
+R15
+R16
+R14
+R2
+R3
+!i122 20
+R0
+Z35 8C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/comparator_dc.vhd
+Z36 FC:/Uni/Year4/EBAES/assignments/RBCPU_16bit/comparator_dc.vhd
+l0
+L7 1
+VDA6F<<b?;O=[GEaVfL^GD3
+!s100 GP>>X;KU>2IZfJBU<1cdg0
+R6
+32
+Z37 !s110 1642857630
+!i10b 1
+R20
+Z38 !s90 -reportprogress|300|-work|work|C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/comparator_dc.vhd|
+Z39 !s107 C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/comparator_dc.vhd|
+!i113 1
+R11
+R12
+Abehavior
+R15
+R16
+R14
+R2
+R3
+DEx4 work 13 comparator_dc 0 22 DA6F<<b?;O=[GEaVfL^GD3
+!i122 20
+l16
+Z40 L14 13
+V_mkVca5^f`WGf3KSY^9Ne2
+!s100 83WZD<[c3MDd9U?hR`C8a0
+R6
+32
+R37
+!i10b 1
+R20
+R38
+R39
+!i113 1
+R11
+R12
+Ecomparator_per
+Z41 w1641382748
+R15
+R16
+R14
+R2
+R3
+!i122 21
+R0
+Z42 8C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/comparator_per.vhd
+Z43 FC:/Uni/Year4/EBAES/assignments/RBCPU_16bit/comparator_per.vhd
+l0
+L7 1
+VY1Y2f7o>8ZRYPI3W4_0hB1
+!s100 5bf;;AhU1ogMRZZ8;jQYC2
+R6
+32
+R37
+!i10b 1
+Z44 !s108 1642857630.000000
+Z45 !s90 -reportprogress|300|-work|work|C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/comparator_per.vhd|
+Z46 !s107 C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/comparator_per.vhd|
+!i113 1
+R11
+R12
+Abehavior
+R15
+R16
+R14
+R2
+R3
+DEx4 work 14 comparator_per 0 22 Y1Y2f7o>8ZRYPI3W4_0hB1
+!i122 21
+l16
+R40
+V`73V3D0eTf@5QbJdL?o?W2
+!s100 0O[7g@VQnC]ao^z[AUnPQ0
+R6
+32
+R37
+!i10b 1
+R44
+R45
+R46
+!i113 1
+R11
+R12
+Ecpu_controller
+Z47 w1641220559
+R2
+R3
+!i122 22
+R0
+Z48 8C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/CPU_Controller.vhd
+Z49 FC:/Uni/Year4/EBAES/assignments/RBCPU_16bit/CPU_Controller.vhd
+l0
+Z50 L25 1
+VJZAYR0b>BcRC1@;n@^Jj;2
+!s100 F23nV0f<mbMISWE4Z<NH]0
+R6
+32
+R37
+!i10b 1
+R44
+Z51 !s90 -reportprogress|300|-work|work|C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/CPU_Controller.vhd|
+Z52 !s107 C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/CPU_Controller.vhd|
+!i113 1
+R11
+R12
+Abdf_type
+R2
+R3
+DEx4 work 14 cpu_controller 0 22 JZAYR0b>BcRC1@;n@^Jj;2
+!i122 22
+l89
+L49 76
+V8aQJT7YR1iG[kH4cd4eXD3
+!s100 hBEfgeH@BE0E`Y^]8h@zl0
+R6
+32
+R37
+!i10b 1
+R44
+R51
+R52
+!i113 1
+R11
+R12
+Ecpu_controller_tb
+Z53 w1641122290
+R14
+R16
+R15
+R2
+R3
+!i122 23
+R0
+Z54 8C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/cpu_controller_tb.vhd
+Z55 FC:/Uni/Year4/EBAES/assignments/RBCPU_16bit/cpu_controller_tb.vhd
+l0
+L8 1
+VQ2MQhl@669XYOgSYCfGY10
+!s100 9YGlOP[[54PhXD@>_8oaR0
+R6
+32
+Z56 !s110 1642857631
+!i10b 1
+Z57 !s108 1642857631.000000
+Z58 !s90 -reportprogress|300|-work|work|C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/cpu_controller_tb.vhd|
+Z59 !s107 C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/cpu_controller_tb.vhd|
+!i113 1
+R11
+R12
+Atb
+R14
+R16
+R15
+R2
+R3
+DEx4 work 17 cpu_controller_tb 0 22 Q2MQhl@669XYOgSYCfGY10
+!i122 23
+l31
+L11 53
+VBP@Nf<2GH7F6Oo04c4Q4d1
+!s100 G>nfZX:bK;H?Y^gnG38:N0
+R6
+32
+R56
+!i10b 1
+R57
+R58
+R59
+!i113 1
+R11
+R12
+Ecycle_counter
+Z60 w1641045714
+R15
+R16
+R14
+R2
+R3
+!i122 24
+R0
+Z61 8C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/cycle_counter.vhd
+Z62 FC:/Uni/Year4/EBAES/assignments/RBCPU_16bit/cycle_counter.vhd
+l0
+L7 1
+Vf=K71VSJSTFlndoceBM9P1
+!s100 L3zKaG=bgoiA^RAS<I4F12
+R6
+32
+R56
+!i10b 1
+R57
+Z63 !s90 -reportprogress|300|-work|work|C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/cycle_counter.vhd|
+Z64 !s107 C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/cycle_counter.vhd|
+!i113 1
+R11
+R12
+Artl
+R15
+R16
+R14
+R2
+R3
+DEx4 work 13 cycle_counter 0 22 f=K71VSJSTFlndoceBM9P1
+!i122 24
+l17
+L15 19
+VGBcP]9SE2l99eFG665TCd3
+!s100 R?GD=KYd;MTW8H1OaJA@e1
+R6
+32
+R56
+!i10b 1
+R57
+R63
+R64
+!i113 1
+R11
+R12
+Edecoder
+Z65 w1641220448
+R15
+R2
+R3
+!i122 25
+R0
+Z66 8C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd
+Z67 FC:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd
+l0
+L5 1
+VEATj2Z_N3KRf^FR_gm2ST3
+!s100 PI35?Rhcj:P6hcgR_hNP73
+R6
+32
+R56
+!i10b 1
+R57
+Z68 !s90 -reportprogress|300|-work|work|C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd|
+Z69 !s107 C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd|
+!i113 1
+R11
+R12
+Artl
+R15
+R2
+R3
+DEx4 work 7 decoder 0 22 EATj2Z_N3KRf^FR_gm2ST3
+!i122 25
+l20
+L15 849
+Vmn5Fh0Vh@f3BYo`OU7>oO2
+!s100 JZR]URjzR;UDh[FIN7:ZK0
+R6
+32
+R56
+!i10b 1
+R57
+R68
+R69
+!i113 1
+R11
+R12
+Einstruction_register
+Z70 w1641148180
+R2
+R3
+!i122 26
+R0
+Z71 8C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/instruction_register.vhd
+Z72 FC:/Uni/Year4/EBAES/assignments/RBCPU_16bit/instruction_register.vhd
+l0
+L3 1
+V^n=`d`3C_f0`NSoh?d7na0
+!s100 zaWX>ZmJTR9TSH;d@XVj51
+R6
+32
+R56
+!i10b 1
+R57
+Z73 !s90 -reportprogress|30|-work|work|C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/instruction_register.vhd|
+Z74 !s107 C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/instruction_register.vhd|
+!i113 1
+R11
+R12
+Artl
+R2
+R3
+DEx4 work 20 instruction_register 0 22 ^n=`d`3C_f0`NSoh?d7na0
+!i122 26
+l12
+L11 18
+VLhBj0Xze__RTE[Ui[;GK_2
+!s100 S^_kb1QdRE6i6aMNVzVNh2
+R6
+32
+R56
+!i10b 1
+R57
+R73
+R74
+!i113 1
+R11
+R12
+Ememmux
+Z75 w1642852057
+R15
+R16
+R14
+R2
+R3
+!i122 27
+R0
+Z76 8C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/memMux.vhd
+Z77 FC:/Uni/Year4/EBAES/assignments/RBCPU_16bit/memMux.vhd
+l0
+L6 1
+V718hHcdaf8C15eML@Se2:2
+!s100 S0endS=beb4FJnKN6IzV60
+R6
+32
+Z78 !s110 1642857632
+!i10b 1
+Z79 !s108 1642857632.000000
+Z80 !s90 -reportprogress|30|-work|work|C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/memMux.vhd|
+Z81 !s107 C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/memMux.vhd|
+!i113 1
+R11
+R12
+Acomb
+R15
+R16
+R14
+R2
+R3
+DEx4 work 6 memmux 0 22 718hHcdaf8C15eML@Se2:2
+!i122 27
+l15
+R33
+V8SUdWUm64OWzoM_Xa^FRG1
+!s100 ^h_>53l?[NlGRTjT>JhiC3
+R6
+32
+R78
+!i10b 1
+R79
+R80
+R81
+!i113 1
+R11
+R12
+Emux_0
+w1641211118
+R2
+R3
+!i122 28
+R0
+8C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/mux_0.vhd
+FC:/Uni/Year4/EBAES/assignments/RBCPU_16bit/mux_0.vhd
+l0
+L27 1
+VJ[H>=<cUg>_6Nj0d6MLYN2
+!s100 94YQ0dglW>NZf<HVSG`]N0
+R6
+32
+R78
+!i10b 1
+R79
+!s90 -reportprogress|30|-work|work|C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/mux_0.vhd|
+!s107 C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/mux_0.vhd|
+!i113 1
+R11
+R12
+Eprogram_counter
+Z82 w1642852038
+R15
+R16
+R14
+R2
+R3
+!i122 29
+R0
+Z83 8C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/program_counter.vhd
+Z84 FC:/Uni/Year4/EBAES/assignments/RBCPU_16bit/program_counter.vhd
+l0
+L6 1
+V_5HZeLJ1foj;FU>2SM^C21
+!s100 Cz[6CMPzgUdaiTPDFV[;l1
+R6
+32
+R78
+!i10b 1
+R79
+Z85 !s90 -reportprogress|30|-work|work|C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/program_counter.vhd|
+Z86 !s107 C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/program_counter.vhd|
+!i113 1
+R11
+R12
+Artl
+R15
+R16
+R14
+R2
+R3
+DEx4 work 15 program_counter 0 22 _5HZeLJ1foj;FU>2SM^C21
+!i122 29
+l15
+L14 20
+V;kIgkJ]HjfaA]TzL_kKh_1
+!s100 79Pf7k^PO8Qf:S_CB<I0f2
+R6
+32
+R78
+!i10b 1
+R79
+R85
+R86
+!i113 1
+R11
+R12
+Epwm_controller
+Z87 w1641385347
+R14
+R2
+R3
+!i122 30
+R0
+Z88 8C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_controller.vhd
+Z89 FC:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_controller.vhd
+l0
+L5 1
+VWXNKM8`[QNz;TIlO5UTMK3
+!s100 5mb@K>]z@lNeo>a69lYCC3
+R6
+32
+R78
+!i10b 1
+R79
+Z90 !s90 -reportprogress|30|-work|work|C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_controller.vhd|
+Z91 !s107 C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_controller.vhd|
+!i113 1
+R11
+R12
+Artl
+R14
+R2
+R3
+DEx4 work 14 pwm_controller 0 22 WXNKM8`[QNz;TIlO5UTMK3
+!i122 30
+l17
+L13 93
+VAizUQ@]n]aAbW71O=[jAc2
+!s100 cY@e3;2YNNG0dWWJdM`Ag1
+R6
+32
+R78
+!i10b 1
+R79
+R90
+R91
+!i113 1
+R11
+R12
+Epwm_counter
+Z92 w1641385867
+R15
+R16
+R14
+R2
+R3
+!i122 31
+R0
+Z93 8C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_counter.vhd
+Z94 FC:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_counter.vhd
+l0
+L7 1
+V?helbnkL5TcR^o@<Z;F?N0
+!s100 3g;2A:NafXITdSYX:1X;]1
+R6
+32
+Z95 !s110 1642857633
+!i10b 1
+R79
+Z96 !s90 -reportprogress|30|-work|work|C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_counter.vhd|
+Z97 !s107 C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_counter.vhd|
+!i113 1
+R11
+R12
+Abehavior
+R15
+R16
+R14
+R2
+R3
+DEx4 work 11 pwm_counter 0 22 ?helbnkL5TcR^o@<Z;F?N0
+!i122 31
+l16
+L14 22
+VzQYK>Dz>aS6FGVb<Xf7<L1
+!s100 N[^FFQU@ZEdCEnVW:]H4;2
+R6
+32
+R95
+!i10b 1
+R79
+R96
+R97
+!i113 1
+R11
+R12
+Epwm_generator
+Z98 w1642848875
+R2
+R3
+!i122 32
+R0
+Z99 8C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_generator.vhd
+Z100 FC:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_generator.vhd
+l0
+R50
+VQ>@QUCG@VKS6<d1XGR>TO2
+!s100 2a[8kgOHhRH91z=0FYiTG3
+R6
+32
+R95
+!i10b 1
+Z101 !s108 1642857633.000000
+Z102 !s90 -reportprogress|30|-work|work|C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_generator.vhd|
+Z103 !s107 C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_generator.vhd|
+!i113 1
+R11
+R12
+Abdf_type
+R2
+R3
+DEx4 work 13 pwm_generator 0 22 Q>@QUCG@VKS6<d1XGR>TO2
+!i122 32
+l92
+L36 117
+V]g?;afkH=O@0@^2<dTbnQ1
+!s100 Z<b2758:IV39=J:1W>edi1
+R6
+32
+R95
+!i10b 1
+R101
+R102
+R103
+!i113 1
+R11
+R12
+Epwm_generator_tb
+Z104 w1641985704
+R14
+R16
+R15
+R2
+R3
+!i122 33
+R0
+Z105 8C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_generator_tb.vhd
+Z106 FC:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_generator_tb.vhd
+l0
+L8 1
+VXo4`lQi>k;U:;PXiEbO:i0
+!s100 SNWRdfEoNb4Qk`S3ZBRY80
+R6
+32
+R95
+!i10b 1
+R101
+Z107 !s90 -reportprogress|30|-work|work|C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_generator_tb.vhd|
+Z108 !s107 C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_generator_tb.vhd|
+!i113 1
+R11
+R12
+Atb
+R14
+R16
+R15
+R2
+R3
+DEx4 work 16 pwm_generator_tb 0 22 Xo4`lQi>k;U:;PXiEbO:i0
+!i122 33
+l28
+L11 49
+V9;:f`j6CPcFmIiWDj8Vjm3
+!s100 E_NSXBi?aKjmNG<1PL@J00
+R6
+32
+R95
+!i10b 1
+R101
+R107
+R108
+!i113 1
+R11
+R12
+Epwmdemux
+Z109 w1641389909
+R15
+R16
+R14
+R2
+R3
+!i122 34
+R0
+Z110 8C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd
+Z111 FC:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd
+l0
+L6 1
+VN?PW7^]gSjfn0O<?YgKGm1
+!s100 j4Z_7Y>U=ah3]?oXdi>Q]0
+R6
+32
+R95
+!i10b 1
+R101
+Z112 !s90 -reportprogress|30|-work|work|C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd|
+Z113 !s107 C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd|
+!i113 1
+R11
+R12
+Acomb
+R15
+R16
+R14
+R2
+R3
+DEx4 work 8 pwmdemux 0 22 N?PW7^]gSjfn0O<?YgKGm1
+!i122 34
+l15
+R33
+VEPh5lE2HTF>]R=B23kTKD3
+!s100 [MIDnFa6Ti7Y?7@5@@NmN3
+R6
+32
+R95
+!i10b 1
+R101
+R112
+R113
+!i113 1
+R11
+R12
+Eram
+Z114 w1642857016
+R14
+R2
+R3
+!i122 35
+R0
+Z115 8C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/ram.vhd
+Z116 FC:/Uni/Year4/EBAES/assignments/RBCPU_16bit/ram.vhd
+l0
+L5 1
+V1VklkFA>mn3ITQVE9=TY50
+!s100 BF=SnBK:nbS>hbjhdAS1@3
+R6
+32
+Z117 !s110 1642857634
+!i10b 1
+R101
+Z118 !s90 -reportprogress|30|-work|work|C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/ram.vhd|
+Z119 !s107 C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/ram.vhd|
+!i113 1
+R11
+R12
+Artl
+R14
+R2
+R3
+DEx4 work 3 ram 0 22 1VklkFA>mn3ITQVE9=TY50
+!i122 35
+l136
+L14 134
+VQYdKLdAk3Z6Ge;1zzAR2G3
+!s100 kP8P5iYAV=MmP`IMn8LH;0
+R6
+32
+R117
+!i10b 1
+R101
+R118
+R119
+!i113 1
+R11
+R12
+Erbcpu_16bit
+Z120 w1642852385
+R2
+R3
+!i122 36
+R0
+Z121 8C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/RBCPU_16bit.vhd
+Z122 FC:/Uni/Year4/EBAES/assignments/RBCPU_16bit/RBCPU_16bit.vhd
+l0
+R50
+V3XSdR;YFkO?[^c]6>mUnz1
+!s100 D<fNJGDmCb6ozDa0M?jL]1
+R6
+32
+R117
+!i10b 1
+Z123 !s108 1642857634.000000
+Z124 !s90 -reportprogress|30|-work|work|C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/RBCPU_16bit.vhd|
+Z125 !s107 C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/RBCPU_16bit.vhd|
+!i113 1
+R11
+R12
+Abdf_type
+R2
+R3
+DEx4 work 11 rbcpu_16bit 0 22 3XSdR;YFkO?[^c]6>mUnz1
+!i122 36
+l186
+L45 257
+V3BI7YhD:4oSGE:HjQV]2z1
+!s100 E^=Jj@4`a?`F@8zJBnOo60
+R6
+32
+R117
+!i10b 1
+R123
+R124
+R125
+!i113 1
+R11
+R12
+Erbcpu_16bit_tb
+Z126 w1642852549
+R14
+R15
+R16
+R2
+R3
+!i122 37
+R0
+Z127 8C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/rbcpu_16bit_tb.vhd
+Z128 FC:/Uni/Year4/EBAES/assignments/RBCPU_16bit/rbcpu_16bit_tb.vhd
+l0
+L7 1
+VBOijfJho<adgRMR9?od`U1
+!s100 >CXCjK;kYO;?>1o:SNRUk0
+R6
+32
+R117
+!i10b 1
+R123
+Z129 !s90 -reportprogress|30|-work|work|C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/rbcpu_16bit_tb.vhd|
+Z130 !s107 C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/rbcpu_16bit_tb.vhd|
+!i113 1
+R11
+R12
+Atb
+R14
+R15
+R16
+R2
+R3
+DEx4 work 14 rbcpu_16bit_tb 0 22 BOijfJho<adgRMR9?od`U1
+!i122 37
+l45
+L10 49
+VI8M=X;Y]mSQEBLWBYOIW?2
+!s100 ZATDJQdK8VZOfB_EOGTLc2
+R6
+32
+R117
+!i10b 1
+R123
+R129
+R130
+!i113 1
+R11
+R12
+Ereg_dc_per
+Z131 w1641382753
+R15
+R16
+R14
+R2
+R3
+!i122 38
+R0
+Z132 8C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/reg_dc_per.vhd
+Z133 FC:/Uni/Year4/EBAES/assignments/RBCPU_16bit/reg_dc_per.vhd
+l0
+L7 1
+V5?Y`::CZZP>NT89Tg?I^62
+!s100 j`jO5Xa95?GZCl^YLd<<:2
+R6
+32
+R117
+!i10b 1
+R123
+Z134 !s90 -reportprogress|30|-work|work|C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/reg_dc_per.vhd|
+Z135 !s107 C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/reg_dc_per.vhd|
+!i113 1
+R11
+R12
+Abehavior
+R15
+R16
+R14
+R2
+R3
+DEx4 work 10 reg_dc_per 0 22 5?Y`::CZZP>NT89Tg?I^62
+!i122 38
+l17
+Z136 L15 20
+Vma5SW3?O_FaO2?V]2<8:S3
+Z137 !s100 bfPP5Ea];5@9AMR88gA4j2
+R6
+32
+R117
+!i10b 1
+R123
+R134
+R135
+!i113 1
+R11
+R12

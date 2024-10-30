@@ -1,0 +1,1128 @@
+Analysis & Synthesis report for RBCPU_16bit
+Sat Jan 22 14:41:58 2022
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |RBCPU_16bit|pwm_generator:inst6|pwm_controller:inst|present_state
+  9. State Machine - |RBCPU_16bit|CPU_Controller:inst|decoder:inst|present_state
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sat Jan 22 14:41:58 2022       ;
+; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                   ; RBCPU_16bit                                 ;
+; Top-level Entity Name           ; RBCPU_16bit                                 ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 1588                                        ;
+; Total pins                      ; 83                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; RBCPU_16bit        ; RBCPU_16bit        ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                  ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                        ; Library ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------+---------+
+; RBCPU_16bit.bdf                  ; yes             ; User Block Diagram/Schematic File  ; C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/RBCPU_16bit.bdf          ;         ;
+; CPU_Controller.bdf               ; yes             ; User Block Diagram/Schematic File  ; C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/CPU_Controller.bdf       ;         ;
+; decoder.vhd                      ; yes             ; User VHDL File                     ; C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd              ;         ;
+; cycle_counter.vhd                ; yes             ; User VHDL File                     ; C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/cycle_counter.vhd        ;         ;
+; instruction_register.vhd         ; yes             ; User VHDL File                     ; C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/instruction_register.vhd ;         ;
+; ram.vhd                          ; yes             ; User VHDL File                     ; C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/ram.vhd                  ;         ;
+; program_counter.vhd              ; yes             ; User VHDL File                     ; C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/program_counter.vhd      ;         ;
+; memMux.vhd                       ; yes             ; User VHDL File                     ; C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/memMux.vhd               ;         ;
+; aluMux0.vhd                      ; yes             ; User VHDL File                     ; C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux0.vhd              ;         ;
+; aluMux1.vhd                      ; yes             ; User VHDL File                     ; C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux1.vhd              ;         ;
+; accumulator.vhd                  ; yes             ; User VHDL File                     ; C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/accumulator.vhd          ;         ;
+; ALU.vhd                          ; yes             ; User VHDL File                     ; C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/ALU.vhd                  ;         ;
+; pwmDemux.vhd                     ; yes             ; User VHDL File                     ; C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd             ;         ;
+; pwm_generator.bdf                ; yes             ; User Block Diagram/Schematic File  ; C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_generator.bdf        ;         ;
+; pwm_controller.vhd               ; yes             ; User VHDL File                     ; C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_controller.vhd       ;         ;
+; reg_dc_per.vhd                   ; yes             ; User VHDL File                     ; C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/reg_dc_per.vhd           ;         ;
+; pwm_counter.vhd                  ; yes             ; User VHDL File                     ; C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_counter.vhd          ;         ;
+; comparator_dc.vhd                ; yes             ; User VHDL File                     ; C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/comparator_dc.vhd        ;         ;
+; comparator_per.vhd               ; yes             ; User VHDL File                     ; C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/comparator_per.vhd       ;         ;
+; freq_div.vhd                     ; yes             ; User VHDL File                     ; C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/freq_div.vhd             ;         ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                          ;
++---------------------------------------------+------------------------+
+; Resource                                    ; Usage                  ;
++---------------------------------------------+------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 1268                   ;
+;                                             ;                        ;
+; Combinational ALUT usage for logic          ; 1096                   ;
+;     -- 7 input functions                    ; 352                    ;
+;     -- 6 input functions                    ; 166                    ;
+;     -- 5 input functions                    ; 52                     ;
+;     -- 4 input functions                    ; 35                     ;
+;     -- <=3 input functions                  ; 491                    ;
+;                                             ;                        ;
+; Dedicated logic registers                   ; 1588                   ;
+;                                             ;                        ;
+; I/O pins                                    ; 83                     ;
+;                                             ;                        ;
+; Total DSP Blocks                            ; 0                      ;
+;                                             ;                        ;
+; Maximum fan-out node                        ; freq_div:inst4|clk_out ;
+; Maximum fan-out                             ; 1563                   ;
+; Total fan-out                               ; 9714                   ;
+; Average fan-out                             ; 3.41                   ;
++---------------------------------------------+------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                    ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ; Entity Name          ; Library Name ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------+----------------------+--------------+
+; |RBCPU_16bit                    ; 1096 (0)            ; 1588 (0)                  ; 0                 ; 0          ; 83   ; 0            ; |RBCPU_16bit                                          ; RBCPU_16bit          ; work         ;
+;    |ALU:inst21|                 ; 58 (58)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RBCPU_16bit|ALU:inst21                               ; ALU                  ; work         ;
+;    |CPU_Controller:inst|        ; 59 (0)              ; 37 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |RBCPU_16bit|CPU_Controller:inst                      ; CPU_Controller       ; work         ;
+;       |cycle_counter:inst1|     ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |RBCPU_16bit|CPU_Controller:inst|cycle_counter:inst1  ; cycle_counter        ; work         ;
+;       |decoder:inst|            ; 58 (58)             ; 36 (36)                   ; 0                 ; 0          ; 0    ; 0            ; |RBCPU_16bit|CPU_Controller:inst|decoder:inst         ; decoder              ; work         ;
+;    |accumulator:inst2|          ; 8 (8)               ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |RBCPU_16bit|accumulator:inst2                        ; accumulator          ; work         ;
+;    |aluMux1:inst11|             ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RBCPU_16bit|aluMux1:inst11                           ; aluMux1              ; work         ;
+;    |freq_div:inst4|             ; 24 (24)             ; 25 (25)                   ; 0                 ; 0          ; 0    ; 0            ; |RBCPU_16bit|freq_div:inst4                           ; freq_div             ; work         ;
+;    |instruction_register:inst3| ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |RBCPU_16bit|instruction_register:inst3               ; instruction_register ; work         ;
+;    |memMux:inst7|               ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RBCPU_16bit|memMux:inst7                             ; memMux               ; work         ;
+;    |program_counter:inst1|      ; 9 (9)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |RBCPU_16bit|program_counter:inst1                    ; program_counter      ; work         ;
+;    |pwmDemux:inst5|             ; 24 (24)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RBCPU_16bit|pwmDemux:inst5                           ; pwmDemux             ; work         ;
+;    |pwm_generator:inst6|        ; 17 (0)              ; 23 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |RBCPU_16bit|pwm_generator:inst6                      ; pwm_generator        ; work         ;
+;       |comparator_dc:inst1|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RBCPU_16bit|pwm_generator:inst6|comparator_dc:inst1  ; comparator_dc        ; work         ;
+;       |comparator_per:inst3|    ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RBCPU_16bit|pwm_generator:inst6|comparator_per:inst3 ; comparator_per       ; work         ;
+;       |pwm_controller:inst|     ; 5 (5)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |RBCPU_16bit|pwm_generator:inst6|pwm_controller:inst  ; pwm_controller       ; work         ;
+;       |pwm_counter:inst5|       ; 6 (6)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |RBCPU_16bit|pwm_generator:inst6|pwm_counter:inst5    ; pwm_counter          ; work         ;
+;       |reg_dc_per:inst2|        ; 0 (0)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |RBCPU_16bit|pwm_generator:inst6|reg_dc_per:inst2     ; reg_dc_per           ; work         ;
+;       |reg_dc_per:inst4|        ; 0 (0)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |RBCPU_16bit|pwm_generator:inst6|reg_dc_per:inst4     ; reg_dc_per           ; work         ;
+;    |ram:inst13|                 ; 877 (877)           ; 1466 (1466)               ; 0                 ; 0          ; 0    ; 0            ; |RBCPU_16bit|ram:inst13                               ; ram                  ; work         ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------+----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |RBCPU_16bit|pwm_generator:inst6|pwm_controller:inst|present_state                                                 ;
++------------------+------------------+------------------+------------------+------------------+------------------+------------------+
+; Name             ; present_state.s4 ; present_state.s3 ; present_state.s2 ; present_state.s1 ; present_state.su ; present_state.s0 ;
++------------------+------------------+------------------+------------------+------------------+------------------+------------------+
+; present_state.s0 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ;
+; present_state.su ; 0                ; 0                ; 0                ; 0                ; 1                ; 1                ;
+; present_state.s1 ; 0                ; 0                ; 0                ; 1                ; 0                ; 1                ;
+; present_state.s2 ; 0                ; 0                ; 1                ; 0                ; 0                ; 1                ;
+; present_state.s3 ; 0                ; 1                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.s4 ; 1                ; 0                ; 0                ; 0                ; 0                ; 1                ;
++------------------+------------------+------------------+------------------+------------------+------------------+------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |RBCPU_16bit|CPU_Controller:inst|decoder:inst|present_state                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ;
++-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+
+; Name              ; present_state.s35 ; present_state.s34 ; present_state.s33 ; present_state.s32 ; present_state.s31 ; present_state.s30 ; present_state.s29 ; present_state.s28 ; present_state.s27 ; present_state.s26 ; present_state.s25 ; present_state.s24 ; present_state.s23 ; present_state.s22 ; present_state.s21 ; present_state.s20 ; present_state.s19 ; present_state.s18 ; present_state.s17 ; present_state.S16 ; present_state.S15 ; present_state.S14 ; present_state.S13 ; present_state.S12 ; present_state.S11 ; present_state.S10 ; present_state.S9 ; present_state.S8 ; present_state.S7 ; present_state.S6 ; present_state.S5 ; present_state.S4 ; present_state.S3 ; present_state.S2 ; present_state.S1 ; present_state.Su ; present_state.S0 ;
++-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+
+; present_state.S0  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ;
+; present_state.Su  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 1                ;
+; present_state.S1  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 1                ;
+; present_state.S2  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 1                ;
+; present_state.S3  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.S4  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.S5  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.S6  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.S7  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.S8  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.S9  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.S10 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.S11 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.S12 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.S13 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.S14 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.S15 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.S16 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.s17 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.s18 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.s19 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.s20 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.s21 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.s22 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.s23 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.s24 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.s25 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.s26 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.s27 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.s28 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.s29 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.s30 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.s31 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.s32 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.s33 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.s34 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; present_state.s35 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
++-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                       ;
++-----------------------------------------------------+--------------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                        ; Free of Timing Hazards ;
++-----------------------------------------------------+--------------------------------------------+------------------------+
+; pwmDemux:inst5|pwmDemux0_output[11]                 ; CPU_Controller:inst|decoder:inst|demux_sel ; yes                    ;
+; pwmDemux:inst5|pwmDemux0_output[10]                 ; CPU_Controller:inst|decoder:inst|demux_sel ; yes                    ;
+; pwmDemux:inst5|pwmDemux0_output[9]                  ; CPU_Controller:inst|decoder:inst|demux_sel ; yes                    ;
+; pwmDemux:inst5|pwmDemux0_output[8]                  ; CPU_Controller:inst|decoder:inst|demux_sel ; yes                    ;
+; pwmDemux:inst5|pwmDemux0_output[7]                  ; CPU_Controller:inst|decoder:inst|demux_sel ; yes                    ;
+; pwmDemux:inst5|pwmDemux0_output[6]                  ; CPU_Controller:inst|decoder:inst|demux_sel ; yes                    ;
+; pwmDemux:inst5|pwmDemux0_output[5]                  ; CPU_Controller:inst|decoder:inst|demux_sel ; yes                    ;
+; pwmDemux:inst5|pwmDemux0_output[4]                  ; CPU_Controller:inst|decoder:inst|demux_sel ; yes                    ;
+; pwmDemux:inst5|pwmDemux0_output[3]                  ; CPU_Controller:inst|decoder:inst|demux_sel ; yes                    ;
+; pwmDemux:inst5|pwmDemux0_output[2]                  ; CPU_Controller:inst|decoder:inst|demux_sel ; yes                    ;
+; pwmDemux:inst5|pwmDemux0_output[1]                  ; CPU_Controller:inst|decoder:inst|demux_sel ; yes                    ;
+; pwmDemux:inst5|pwmDemux0_output[0]                  ; CPU_Controller:inst|decoder:inst|demux_sel ; yes                    ;
+; pwmDemux:inst5|pwmDemux1_output[5]                  ; CPU_Controller:inst|decoder:inst|demux_sel ; yes                    ;
+; pwmDemux:inst5|pwmDemux1_output[4]                  ; CPU_Controller:inst|decoder:inst|demux_sel ; yes                    ;
+; pwmDemux:inst5|pwmDemux1_output[3]                  ; CPU_Controller:inst|decoder:inst|demux_sel ; yes                    ;
+; pwmDemux:inst5|pwmDemux1_output[2]                  ; CPU_Controller:inst|decoder:inst|demux_sel ; yes                    ;
+; pwmDemux:inst5|pwmDemux1_output[1]                  ; CPU_Controller:inst|decoder:inst|demux_sel ; yes                    ;
+; pwmDemux:inst5|pwmDemux1_output[0]                  ; CPU_Controller:inst|decoder:inst|demux_sel ; yes                    ;
+; pwmDemux:inst5|pwmDemux1_output[11]                 ; CPU_Controller:inst|decoder:inst|demux_sel ; yes                    ;
+; pwmDemux:inst5|pwmDemux1_output[10]                 ; CPU_Controller:inst|decoder:inst|demux_sel ; yes                    ;
+; pwmDemux:inst5|pwmDemux1_output[9]                  ; CPU_Controller:inst|decoder:inst|demux_sel ; yes                    ;
+; pwmDemux:inst5|pwmDemux1_output[8]                  ; CPU_Controller:inst|decoder:inst|demux_sel ; yes                    ;
+; pwmDemux:inst5|pwmDemux1_output[7]                  ; CPU_Controller:inst|decoder:inst|demux_sel ; yes                    ;
+; pwmDemux:inst5|pwmDemux1_output[6]                  ; CPU_Controller:inst|decoder:inst|demux_sel ; yes                    ;
+; Number of user-specified and inferred latches = 24  ;                                            ;                        ;
++-----------------------------------------------------+--------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                          ;
++----------------------------------------------------------+------------------------------------------------------------------+
+; Register name                                            ; Reason for Removal                                               ;
++----------------------------------------------------------+------------------------------------------------------------------+
+; pwm_generator:inst6|pwm_counter:inst5|counter_out[5]     ; Merged with pwm_generator:inst6|pwm_counter:inst5|cnt[5]         ;
+; pwm_generator:inst6|pwm_counter:inst5|counter_out[4]     ; Merged with pwm_generator:inst6|pwm_counter:inst5|cnt[4]         ;
+; pwm_generator:inst6|pwm_counter:inst5|counter_out[3]     ; Merged with pwm_generator:inst6|pwm_counter:inst5|cnt[3]         ;
+; pwm_generator:inst6|pwm_counter:inst5|counter_out[2]     ; Merged with pwm_generator:inst6|pwm_counter:inst5|cnt[2]         ;
+; pwm_generator:inst6|pwm_counter:inst5|counter_out[1]     ; Merged with pwm_generator:inst6|pwm_counter:inst5|cnt[1]         ;
+; pwm_generator:inst6|pwm_counter:inst5|counter_out[0]     ; Merged with pwm_generator:inst6|pwm_counter:inst5|cnt[0]         ;
+; accumulator:inst2|store[11]                              ; Merged with accumulator:inst2|acu_out[11]                        ;
+; accumulator:inst2|store[10]                              ; Merged with accumulator:inst2|acu_out[10]                        ;
+; accumulator:inst2|store[9]                               ; Merged with accumulator:inst2|acu_out[9]                         ;
+; accumulator:inst2|store[8]                               ; Merged with accumulator:inst2|acu_out[8]                         ;
+; accumulator:inst2|store[7]                               ; Merged with accumulator:inst2|acu_out[7]                         ;
+; accumulator:inst2|store[6]                               ; Merged with accumulator:inst2|acu_out[6]                         ;
+; accumulator:inst2|store[5]                               ; Merged with accumulator:inst2|acu_out[5]                         ;
+; accumulator:inst2|store[4]                               ; Merged with accumulator:inst2|acu_out[4]                         ;
+; accumulator:inst2|store[3]                               ; Merged with accumulator:inst2|acu_out[3]                         ;
+; accumulator:inst2|store[2]                               ; Merged with accumulator:inst2|acu_out[2]                         ;
+; accumulator:inst2|store[1]                               ; Merged with accumulator:inst2|acu_out[1]                         ;
+; accumulator:inst2|store[0]                               ; Merged with accumulator:inst2|acu_out[0]                         ;
+; accumulator:inst2|store_cobo                             ; Merged with accumulator:inst2|acu_cobo                           ;
+; program_counter:inst1|pc_out[7]                          ; Merged with program_counter:inst1|cnt[7]                         ;
+; program_counter:inst1|pc_out[6]                          ; Merged with program_counter:inst1|cnt[6]                         ;
+; program_counter:inst1|pc_out[5]                          ; Merged with program_counter:inst1|cnt[5]                         ;
+; program_counter:inst1|pc_out[4]                          ; Merged with program_counter:inst1|cnt[4]                         ;
+; program_counter:inst1|pc_out[3]                          ; Merged with program_counter:inst1|cnt[3]                         ;
+; program_counter:inst1|pc_out[2]                          ; Merged with program_counter:inst1|cnt[2]                         ;
+; program_counter:inst1|pc_out[1]                          ; Merged with program_counter:inst1|cnt[1]                         ;
+; program_counter:inst1|pc_out[0]                          ; Merged with program_counter:inst1|cnt[0]                         ;
+; pwm_generator:inst6|reg_dc_per:inst4|store[5]            ; Merged with pwm_generator:inst6|reg_dc_per:inst4|reg_out[5]      ;
+; pwm_generator:inst6|reg_dc_per:inst4|store[4]            ; Merged with pwm_generator:inst6|reg_dc_per:inst4|reg_out[4]      ;
+; pwm_generator:inst6|reg_dc_per:inst4|store[3]            ; Merged with pwm_generator:inst6|reg_dc_per:inst4|reg_out[3]      ;
+; pwm_generator:inst6|reg_dc_per:inst4|store[2]            ; Merged with pwm_generator:inst6|reg_dc_per:inst4|reg_out[2]      ;
+; pwm_generator:inst6|reg_dc_per:inst4|store[1]            ; Merged with pwm_generator:inst6|reg_dc_per:inst4|reg_out[1]      ;
+; pwm_generator:inst6|reg_dc_per:inst4|store[0]            ; Merged with pwm_generator:inst6|reg_dc_per:inst4|reg_out[0]      ;
+; instruction_register:inst3|store[15]                     ; Merged with instruction_register:inst3|q[15]                     ;
+; instruction_register:inst3|store[14]                     ; Merged with instruction_register:inst3|q[14]                     ;
+; instruction_register:inst3|store[13]                     ; Merged with instruction_register:inst3|q[13]                     ;
+; instruction_register:inst3|store[12]                     ; Merged with instruction_register:inst3|q[12]                     ;
+; CPU_Controller:inst|cycle_counter:inst1|cycle_phs        ; Merged with CPU_Controller:inst|cycle_counter:inst1|cnt_value[0] ;
+; instruction_register:inst3|store[11]                     ; Merged with instruction_register:inst3|q[11]                     ;
+; instruction_register:inst3|store[10]                     ; Merged with instruction_register:inst3|q[10]                     ;
+; instruction_register:inst3|store[9]                      ; Merged with instruction_register:inst3|q[9]                      ;
+; instruction_register:inst3|store[8]                      ; Merged with instruction_register:inst3|q[8]                      ;
+; instruction_register:inst3|store[7]                      ; Merged with instruction_register:inst3|q[7]                      ;
+; instruction_register:inst3|store[6]                      ; Merged with instruction_register:inst3|q[6]                      ;
+; instruction_register:inst3|store[5]                      ; Merged with instruction_register:inst3|q[5]                      ;
+; instruction_register:inst3|store[4]                      ; Merged with instruction_register:inst3|q[4]                      ;
+; instruction_register:inst3|store[3]                      ; Merged with instruction_register:inst3|q[3]                      ;
+; instruction_register:inst3|store[2]                      ; Merged with instruction_register:inst3|q[2]                      ;
+; instruction_register:inst3|store[1]                      ; Merged with instruction_register:inst3|q[1]                      ;
+; instruction_register:inst3|store[0]                      ; Merged with instruction_register:inst3|q[0]                      ;
+; pwm_generator:inst6|reg_dc_per:inst2|store[5]            ; Merged with pwm_generator:inst6|reg_dc_per:inst2|reg_out[5]      ;
+; pwm_generator:inst6|reg_dc_per:inst2|store[4]            ; Merged with pwm_generator:inst6|reg_dc_per:inst2|reg_out[4]      ;
+; pwm_generator:inst6|reg_dc_per:inst2|store[3]            ; Merged with pwm_generator:inst6|reg_dc_per:inst2|reg_out[3]      ;
+; pwm_generator:inst6|reg_dc_per:inst2|store[2]            ; Merged with pwm_generator:inst6|reg_dc_per:inst2|reg_out[2]      ;
+; pwm_generator:inst6|reg_dc_per:inst2|store[1]            ; Merged with pwm_generator:inst6|reg_dc_per:inst2|reg_out[1]      ;
+; pwm_generator:inst6|reg_dc_per:inst2|store[0]            ; Merged with pwm_generator:inst6|reg_dc_per:inst2|reg_out[0]      ;
+; CPU_Controller:inst|cycle_counter:inst1|cnt_value[1]     ; Lost fanout                                                      ;
+; pwm_generator:inst6|pwm_controller:inst|present_state.su ; Merged with CPU_Controller:inst|decoder:inst|present_state.Su    ;
+; ram:inst13|ram_words~39                                  ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~55                                  ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~71                                  ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~87                                  ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~103                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~119                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~135                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~151                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~167                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~183                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~199                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~215                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~231                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~247                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~263                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~279                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~295                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~311                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~327                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~343                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~359                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~375                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~391                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~407                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~423                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~439                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~455                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~471                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~487                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~503                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~519                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~535                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~551                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~567                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~583                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~599                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~615                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~631                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~647                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~663                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~679                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~695                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~711                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~727                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~743                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~759                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~775                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~791                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~807                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~823                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~839                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~855                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~871                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~887                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~903                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~919                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~935                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~951                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~967                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~983                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~999                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1015                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1031                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1047                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1063                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1079                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1095                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1111                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1127                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1143                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1159                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1175                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1191                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1207                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1223                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1239                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1255                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1271                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1287                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1303                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1319                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1335                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1351                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1367                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1383                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1399                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1415                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1431                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1447                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1463                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1479                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1495                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1511                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1527                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1543                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1559                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1575                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1591                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1607                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1623                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1639                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1655                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1671                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1687                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1703                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1719                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1735                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1751                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1767                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1783                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1799                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1815                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1831                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1847                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1863                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1879                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1911                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~54                                  ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~70                                  ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~86                                  ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~102                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~150                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~166                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~182                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~198                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~246                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~262                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~278                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~294                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~342                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~358                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~374                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~390                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~438                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~454                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~470                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~486                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~534                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~550                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~566                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~582                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~630                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~646                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~662                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~678                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~726                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~742                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~758                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~774                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~822                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~838                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~854                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~870                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~886                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~934                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~950                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~966                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~982                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1014                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1030                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1046                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1062                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1110                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1126                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1142                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1158                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1206                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1222                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1238                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1254                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1302                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1318                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1334                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1350                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1398                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1414                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1430                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1446                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1494                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1510                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1558                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1574                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1622                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1638                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1686                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1702                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1750                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1766                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1814                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1830                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1910                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~37                                  ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~53                                  ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~69                                  ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~85                                  ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~101                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~117                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~133                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~149                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~165                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~181                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~197                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~213                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~229                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~245                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~261                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~277                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~293                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~309                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~325                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~341                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~357                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~373                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~389                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~405                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~421                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~437                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~453                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~469                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~485                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~501                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~517                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~533                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~549                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~565                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~581                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~597                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~613                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~629                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~645                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~661                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~677                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~693                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~709                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~725                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~741                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~757                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~773                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~789                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~805                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~821                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~837                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~853                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~869                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~885                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~901                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~917                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~933                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~949                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~965                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~981                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~997                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1013                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1029                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1045                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1061                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1077                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1093                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1109                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1125                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1141                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1157                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1173                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1189                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1205                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1221                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1237                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1253                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1269                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1285                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1301                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1317                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1333                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1349                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1365                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1381                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1397                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1413                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1429                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1445                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1461                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1477                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1493                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1509                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1525                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1541                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1557                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1573                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1589                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1605                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1621                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1637                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1653                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1669                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1685                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1701                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1717                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1733                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1749                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1765                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1781                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1797                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1813                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1845                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1861                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1909                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~36                                  ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~52                                  ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~68                                  ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~84                                  ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~100                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~116                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~132                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~148                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~164                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~180                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~196                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~212                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~228                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~244                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~260                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~276                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~292                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~308                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~324                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~340                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~356                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~372                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~388                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~404                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~420                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~436                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~452                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~468                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~484                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~500                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~516                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~532                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~548                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~564                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~580                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~596                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~612                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~628                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~644                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~660                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~676                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~692                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~708                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~724                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~740                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~756                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~772                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~788                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~804                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~820                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~836                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~852                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~868                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~884                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~900                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~916                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~932                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~948                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~964                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~980                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~996                                 ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1012                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1028                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1044                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1060                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1076                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1092                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1108                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1124                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1140                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1156                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1172                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1188                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1204                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1220                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1236                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1252                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1268                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1284                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1300                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1316                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1332                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1348                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1364                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1380                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1396                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1412                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1428                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1444                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1460                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1476                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1492                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1508                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1524                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1540                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1556                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1572                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1588                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1604                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1620                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1636                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1652                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1668                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1684                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1700                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1716                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1732                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1748                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1764                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1780                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1796                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1828                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1844                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1860                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1892                                ; Stuck at GND due to stuck port data_in                           ;
+; ram:inst13|ram_words~1908                                ; Stuck at GND due to stuck port data_in                           ;
+; CPU_Controller:inst|decoder:inst|present_state.Su        ; Stuck at GND due to stuck port data_in                           ;
+; Total Number of Removed Registers = 481                  ;                                                                  ;
++----------------------------------------------------------+------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1588  ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Asynchronous Clear ; 121   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1522  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |RBCPU_16bit|program_counter:inst1|cnt[5] ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 32 LEs               ; 12 LEs                 ; Yes        ; |RBCPU_16bit|accumulator:inst2|acu_out[9] ;
+; 16:1               ; 7 bits    ; 70 LEs        ; 56 LEs               ; 14 LEs                 ; No         ; |RBCPU_16bit|ALU:inst21|Mux4              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 1588                        ;
+;     CLR               ; 66                          ;
+;     ENA               ; 1467                        ;
+;     ENA CLR           ; 47                          ;
+;     ENA CLR SLD       ; 8                           ;
+; arriav_io_obuf        ; 1                           ;
+; arriav_lcell_comb     ; 1097                        ;
+;     arith             ; 62                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 35                          ;
+;         2 data inputs ; 14                          ;
+;         5 data inputs ; 12                          ;
+;     extend            ; 352                         ;
+;         7 data inputs ; 352                         ;
+;     normal            ; 670                         ;
+;         1 data inputs ; 256                         ;
+;         2 data inputs ; 25                          ;
+;         3 data inputs ; 148                         ;
+;         4 data inputs ; 35                          ;
+;         5 data inputs ; 40                          ;
+;         6 data inputs ; 166                         ;
+;     shared            ; 13                          ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 12                          ;
+; boundary_port         ; 83                          ;
+;                       ;                             ;
+; Max LUT depth         ; 11.30                       ;
+; Average LUT depth     ; 7.47                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:04     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Sat Jan 22 14:41:34 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RBCPU_16bit -c RBCPU_16bit
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file rbcpu_16bit.bdf
+    Info (12023): Found entity 1: RBCPU_16bit
+Info (12021): Found 1 design units, including 1 entities, in source file cpu_controller.bdf
+    Info (12023): Found entity 1: CPU_Controller
+Info (12021): Found 2 design units, including 1 entities, in source file decoder.vhd
+    Info (12022): Found design unit 1: decoder-RTL File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 15
+    Info (12023): Found entity 1: decoder File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file cycle_counter.vhd
+    Info (12022): Found design unit 1: cycle_counter-RTL File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/cycle_counter.vhd Line: 15
+    Info (12023): Found entity 1: cycle_counter File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/cycle_counter.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file cpu_controller_tb.vhd
+    Info (12022): Found design unit 1: cpu_controller_tb-tb File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/cpu_controller_tb.vhd Line: 11
+    Info (12023): Found entity 1: cpu_controller_tb File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/cpu_controller_tb.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file instruction_register.vhd
+    Info (12022): Found design unit 1: instruction_register-rtl File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/instruction_register.vhd Line: 11
+    Info (12023): Found entity 1: instruction_register File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/instruction_register.vhd Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file ram.vhd
+    Info (12022): Found design unit 1: ram-rtl File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/ram.vhd Line: 14
+    Info (12023): Found entity 1: ram File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/ram.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file program_counter.vhd
+    Info (12022): Found design unit 1: program_counter-rtl File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/program_counter.vhd Line: 14
+    Info (12023): Found entity 1: program_counter File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/program_counter.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file rbcpu_16bit_tb.vhd
+    Info (12022): Found design unit 1: rbcpu_16bit_tb-tb File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/rbcpu_16bit_tb.vhd Line: 10
+    Info (12023): Found entity 1: rbcpu_16bit_tb File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/rbcpu_16bit_tb.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file memmux.vhd
+    Info (12022): Found design unit 1: memMux-comb File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/memMux.vhd Line: 14
+    Info (12023): Found entity 1: memMux File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/memMux.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file alumux0.vhd
+    Info (12022): Found design unit 1: aluMux0-comb File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux0.vhd Line: 15
+    Info (12023): Found entity 1: aluMux0 File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux0.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file alumux1.vhd
+    Info (12022): Found design unit 1: aluMux1-comb File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux1.vhd Line: 14
+    Info (12023): Found entity 1: aluMux1 File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux1.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file accumulator.vhd
+    Info (12022): Found design unit 1: accumulator-rtl File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/accumulator.vhd Line: 12
+    Info (12023): Found entity 1: accumulator File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/accumulator.vhd Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: ALU-Comb File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/ALU.vhd Line: 16
+    Info (12023): Found entity 1: ALU File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/ALU.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file pwmdemux.vhd
+    Info (12022): Found design unit 1: pwmDemux-comb File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 14
+    Info (12023): Found entity 1: pwmDemux File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file pwm_generator.bdf
+    Info (12023): Found entity 1: pwm_generator
+Info (12021): Found 2 design units, including 1 entities, in source file pwm_controller.vhd
+    Info (12022): Found design unit 1: pwm_controller-RTL File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_controller.vhd Line: 13
+    Info (12023): Found entity 1: pwm_controller File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_controller.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file reg_dc_per.vhd
+    Info (12022): Found design unit 1: reg_dc_per-behavior File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/reg_dc_per.vhd Line: 15
+    Info (12023): Found entity 1: reg_dc_per File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/reg_dc_per.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file pwm_counter.vhd
+    Info (12022): Found design unit 1: pwm_counter-behavior File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_counter.vhd Line: 14
+    Info (12023): Found entity 1: pwm_counter File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_counter.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file comparator_dc.vhd
+    Info (12022): Found design unit 1: comparator_dc-behavior File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/comparator_dc.vhd Line: 14
+    Info (12023): Found entity 1: comparator_dc File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/comparator_dc.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file comparator_per.vhd
+    Info (12022): Found design unit 1: comparator_per-behavior File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/comparator_per.vhd Line: 14
+    Info (12023): Found entity 1: comparator_per File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/comparator_per.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file pwm_generator_tb.vhd
+    Info (12022): Found design unit 1: pwm_generator_tb-tb File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_generator_tb.vhd Line: 11
+    Info (12023): Found entity 1: pwm_generator_tb File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_generator_tb.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file freq_div.vhd
+    Info (12022): Found design unit 1: freq_div-behaviour File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/freq_div.vhd Line: 13
+    Info (12023): Found entity 1: freq_div File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/freq_div.vhd Line: 5
+Info (12127): Elaborating entity "RBCPU_16bit" for the top level hierarchy
+Info (12128): Elaborating entity "CPU_Controller" for hierarchy "CPU_Controller:inst"
+Info (12128): Elaborating entity "decoder" for hierarchy "CPU_Controller:inst|decoder:inst"
+Warning (10631): VHDL Process Statement warning at decoder.vhd(22): inferring latch(es) for signal or variable "n_s", which holds its previous value in one or more paths through the process File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.s35" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.s34" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.s33" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.s32" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.s31" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.s30" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.s29" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.s28" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.s27" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.s26" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.s25" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.s24" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.s23" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.s22" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.s21" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.s20" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.s19" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.s18" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.s17" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.S16" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.S15" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.S14" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.S13" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.S12" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.S11" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.S10" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.S9" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.S8" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.S7" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.S6" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.S5" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.S4" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.S3" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.S2" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.S1" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.S0" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (10041): Inferred latch for "next_state_dec_proc:n_s.Su" at decoder.vhd(22) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd Line: 22
+Info (12128): Elaborating entity "cycle_counter" for hierarchy "CPU_Controller:inst|cycle_counter:inst1"
+Info (12128): Elaborating entity "freq_div" for hierarchy "freq_div:inst4"
+Info (12128): Elaborating entity "accumulator" for hierarchy "accumulator:inst2"
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:inst21"
+Info (12128): Elaborating entity "aluMux0" for hierarchy "aluMux0:inst10"
+Warning (10631): VHDL Process Statement warning at aluMux0.vhd(17): inferring latch(es) for signal or variable "aluMux0_output", which holds its previous value in one or more paths through the process File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux0.vhd Line: 17
+Info (10041): Inferred latch for "aluMux0_output[0]" at aluMux0.vhd(17) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux0.vhd Line: 17
+Info (10041): Inferred latch for "aluMux0_output[1]" at aluMux0.vhd(17) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux0.vhd Line: 17
+Info (10041): Inferred latch for "aluMux0_output[2]" at aluMux0.vhd(17) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux0.vhd Line: 17
+Info (10041): Inferred latch for "aluMux0_output[3]" at aluMux0.vhd(17) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux0.vhd Line: 17
+Info (10041): Inferred latch for "aluMux0_output[4]" at aluMux0.vhd(17) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux0.vhd Line: 17
+Info (10041): Inferred latch for "aluMux0_output[5]" at aluMux0.vhd(17) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux0.vhd Line: 17
+Info (10041): Inferred latch for "aluMux0_output[6]" at aluMux0.vhd(17) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux0.vhd Line: 17
+Info (10041): Inferred latch for "aluMux0_output[7]" at aluMux0.vhd(17) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux0.vhd Line: 17
+Info (10041): Inferred latch for "aluMux0_output[8]" at aluMux0.vhd(17) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux0.vhd Line: 17
+Info (10041): Inferred latch for "aluMux0_output[9]" at aluMux0.vhd(17) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux0.vhd Line: 17
+Info (10041): Inferred latch for "aluMux0_output[10]" at aluMux0.vhd(17) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux0.vhd Line: 17
+Info (10041): Inferred latch for "aluMux0_output[11]" at aluMux0.vhd(17) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux0.vhd Line: 17
+Info (12128): Elaborating entity "pwmDemux" for hierarchy "pwmDemux:inst5"
+Warning (10631): VHDL Process Statement warning at pwmDemux.vhd(16): inferring latch(es) for signal or variable "pwmDemux0_output", which holds its previous value in one or more paths through the process File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 16
+Warning (10631): VHDL Process Statement warning at pwmDemux.vhd(16): inferring latch(es) for signal or variable "pwmDemux1_output", which holds its previous value in one or more paths through the process File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 16
+Info (10041): Inferred latch for "pwmDemux1_output[0]" at pwmDemux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 16
+Info (10041): Inferred latch for "pwmDemux1_output[1]" at pwmDemux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 16
+Info (10041): Inferred latch for "pwmDemux1_output[2]" at pwmDemux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 16
+Info (10041): Inferred latch for "pwmDemux1_output[3]" at pwmDemux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 16
+Info (10041): Inferred latch for "pwmDemux1_output[4]" at pwmDemux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 16
+Info (10041): Inferred latch for "pwmDemux1_output[5]" at pwmDemux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 16
+Info (10041): Inferred latch for "pwmDemux1_output[6]" at pwmDemux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 16
+Info (10041): Inferred latch for "pwmDemux1_output[7]" at pwmDemux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 16
+Info (10041): Inferred latch for "pwmDemux1_output[8]" at pwmDemux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 16
+Info (10041): Inferred latch for "pwmDemux1_output[9]" at pwmDemux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 16
+Info (10041): Inferred latch for "pwmDemux1_output[10]" at pwmDemux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 16
+Info (10041): Inferred latch for "pwmDemux1_output[11]" at pwmDemux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 16
+Info (10041): Inferred latch for "pwmDemux0_output[0]" at pwmDemux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 16
+Info (10041): Inferred latch for "pwmDemux0_output[1]" at pwmDemux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 16
+Info (10041): Inferred latch for "pwmDemux0_output[2]" at pwmDemux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 16
+Info (10041): Inferred latch for "pwmDemux0_output[3]" at pwmDemux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 16
+Info (10041): Inferred latch for "pwmDemux0_output[4]" at pwmDemux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 16
+Info (10041): Inferred latch for "pwmDemux0_output[5]" at pwmDemux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 16
+Info (10041): Inferred latch for "pwmDemux0_output[6]" at pwmDemux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 16
+Info (10041): Inferred latch for "pwmDemux0_output[7]" at pwmDemux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 16
+Info (10041): Inferred latch for "pwmDemux0_output[8]" at pwmDemux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 16
+Info (10041): Inferred latch for "pwmDemux0_output[9]" at pwmDemux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 16
+Info (10041): Inferred latch for "pwmDemux0_output[10]" at pwmDemux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 16
+Info (10041): Inferred latch for "pwmDemux0_output[11]" at pwmDemux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd Line: 16
+Info (12128): Elaborating entity "instruction_register" for hierarchy "instruction_register:inst3"
+Info (12128): Elaborating entity "ram" for hierarchy "ram:inst13"
+Info (12128): Elaborating entity "memMux" for hierarchy "memMux:inst7"
+Warning (10631): VHDL Process Statement warning at memMux.vhd(16): inferring latch(es) for signal or variable "memMux_output", which holds its previous value in one or more paths through the process File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/memMux.vhd Line: 16
+Info (10041): Inferred latch for "memMux_output[0]" at memMux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/memMux.vhd Line: 16
+Info (10041): Inferred latch for "memMux_output[1]" at memMux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/memMux.vhd Line: 16
+Info (10041): Inferred latch for "memMux_output[2]" at memMux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/memMux.vhd Line: 16
+Info (10041): Inferred latch for "memMux_output[3]" at memMux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/memMux.vhd Line: 16
+Info (10041): Inferred latch for "memMux_output[4]" at memMux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/memMux.vhd Line: 16
+Info (10041): Inferred latch for "memMux_output[5]" at memMux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/memMux.vhd Line: 16
+Info (10041): Inferred latch for "memMux_output[6]" at memMux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/memMux.vhd Line: 16
+Info (10041): Inferred latch for "memMux_output[7]" at memMux.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/memMux.vhd Line: 16
+Info (12128): Elaborating entity "program_counter" for hierarchy "program_counter:inst1"
+Info (12128): Elaborating entity "aluMux1" for hierarchy "aluMux1:inst11"
+Warning (10631): VHDL Process Statement warning at aluMux1.vhd(16): inferring latch(es) for signal or variable "aluMux1_output", which holds its previous value in one or more paths through the process File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux1.vhd Line: 16
+Info (10041): Inferred latch for "aluMux1_output[0]" at aluMux1.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux1.vhd Line: 16
+Info (10041): Inferred latch for "aluMux1_output[1]" at aluMux1.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux1.vhd Line: 16
+Info (10041): Inferred latch for "aluMux1_output[2]" at aluMux1.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux1.vhd Line: 16
+Info (10041): Inferred latch for "aluMux1_output[3]" at aluMux1.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux1.vhd Line: 16
+Info (10041): Inferred latch for "aluMux1_output[4]" at aluMux1.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux1.vhd Line: 16
+Info (10041): Inferred latch for "aluMux1_output[5]" at aluMux1.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux1.vhd Line: 16
+Info (10041): Inferred latch for "aluMux1_output[6]" at aluMux1.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux1.vhd Line: 16
+Info (10041): Inferred latch for "aluMux1_output[7]" at aluMux1.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux1.vhd Line: 16
+Info (10041): Inferred latch for "aluMux1_output[8]" at aluMux1.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux1.vhd Line: 16
+Info (10041): Inferred latch for "aluMux1_output[9]" at aluMux1.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux1.vhd Line: 16
+Info (10041): Inferred latch for "aluMux1_output[10]" at aluMux1.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux1.vhd Line: 16
+Info (10041): Inferred latch for "aluMux1_output[11]" at aluMux1.vhd(16) File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux1.vhd Line: 16
+Info (12128): Elaborating entity "pwm_generator" for hierarchy "pwm_generator:inst6"
+Info (12128): Elaborating entity "comparator_dc" for hierarchy "pwm_generator:inst6|comparator_dc:inst1"
+Info (12128): Elaborating entity "pwm_counter" for hierarchy "pwm_generator:inst6|pwm_counter:inst5"
+Info (12128): Elaborating entity "pwm_controller" for hierarchy "pwm_generator:inst6|pwm_controller:inst"
+Info (12128): Elaborating entity "comparator_per" for hierarchy "pwm_generator:inst6|comparator_per:inst3"
+Info (12128): Elaborating entity "reg_dc_per" for hierarchy "pwm_generator:inst6|reg_dc_per:inst4"
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "ram:inst13|ram_words" is uninferred due to asynchronous read logic File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/ram.vhd Line: 16
+Warning (113028): 10 out of 128 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/db/RBCPU_16bit.ram0_ram_1d0cf.hdl.mif Line: 1
+    Warning (113027): Addresses ranging from 118 to 127 are not initialized File: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/db/RBCPU_16bit.ram0_ram_1d0cf.hdl.mif Line: 1
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 2430 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 81 output pins
+    Info (21061): Implemented 2347 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 4850 megabytes
+    Info: Processing ended: Sat Jan 22 14:41:58 2022
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:34
+
+

@@ -1,0 +1,577 @@
+# Reading pref.tcl
+# do RBCPU_16bit_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite_20.1/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:19:18 on Jan 22,2022
+# vcom -reportprogress 300 -93 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling entity decoder
+# -- Compiling architecture RTL of decoder
+# End time: 14:19:18 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/cycle_counter.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:19:18 on Jan 22,2022
+# vcom -reportprogress 300 -93 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/cycle_counter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity cycle_counter
+# -- Compiling architecture RTL of cycle_counter
+# End time: 14:19:18 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/instruction_register.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:19:18 on Jan 22,2022
+# vcom -reportprogress 300 -93 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/instruction_register.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity instruction_register
+# -- Compiling architecture rtl of instruction_register
+# End time: 14:19:19 on Jan 22,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/ram.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:19:19 on Jan 22,2022
+# vcom -reportprogress 300 -93 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/ram.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ram
+# -- Compiling architecture rtl of ram
+# End time: 14:19:19 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/program_counter.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:19:19 on Jan 22,2022
+# vcom -reportprogress 300 -93 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/program_counter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity program_counter
+# -- Compiling architecture rtl of program_counter
+# End time: 14:19:19 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/memMux.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:19:19 on Jan 22,2022
+# vcom -reportprogress 300 -93 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/memMux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity memMux
+# -- Compiling architecture comb of memMux
+# End time: 14:19:19 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux0.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:19:19 on Jan 22,2022
+# vcom -reportprogress 300 -93 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux0.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity aluMux0
+# -- Compiling architecture comb of aluMux0
+# End time: 14:19:19 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux1.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:19:20 on Jan 22,2022
+# vcom -reportprogress 300 -93 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity aluMux1
+# -- Compiling architecture comb of aluMux1
+# End time: 14:19:20 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/accumulator.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:19:20 on Jan 22,2022
+# vcom -reportprogress 300 -93 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/accumulator.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity accumulator
+# -- Compiling architecture rtl of accumulator
+# End time: 14:19:20 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/ALU.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:19:20 on Jan 22,2022
+# vcom -reportprogress 300 -93 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/ALU.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ALU
+# -- Compiling architecture Comb of ALU
+# End time: 14:19:20 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:19:20 on Jan 22,2022
+# vcom -reportprogress 300 -93 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity pwmDemux
+# -- Compiling architecture comb of pwmDemux
+# End time: 14:19:20 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_controller.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:19:21 on Jan 22,2022
+# vcom -reportprogress 300 -93 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_controller.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity pwm_controller
+# -- Compiling architecture RTL of pwm_controller
+# End time: 14:19:21 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/reg_dc_per.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:19:21 on Jan 22,2022
+# vcom -reportprogress 300 -93 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/reg_dc_per.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity reg_dc_per
+# -- Compiling architecture behavior of reg_dc_per
+# End time: 14:19:21 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_counter.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:19:21 on Jan 22,2022
+# vcom -reportprogress 300 -93 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_counter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity pwm_counter
+# -- Compiling architecture behavior of pwm_counter
+# End time: 14:19:21 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/comparator_dc.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:19:21 on Jan 22,2022
+# vcom -reportprogress 300 -93 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/comparator_dc.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity comparator_dc
+# -- Compiling architecture behavior of comparator_dc
+# End time: 14:19:21 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/comparator_per.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:19:22 on Jan 22,2022
+# vcom -reportprogress 300 -93 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/comparator_per.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity comparator_per
+# -- Compiling architecture behavior of comparator_per
+# End time: 14:19:22 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vcom -reportprogress 300 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/accumulator.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:20:28 on Jan 22,2022
+# vcom -reportprogress 300 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/accumulator.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity accumulator
+# -- Compiling architecture rtl of accumulator
+# End time: 14:20:28 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/ALU.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:20:29 on Jan 22,2022
+# vcom -reportprogress 300 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/ALU.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ALU
+# -- Compiling architecture Comb of ALU
+# End time: 14:20:29 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux0.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:20:29 on Jan 22,2022
+# vcom -reportprogress 300 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux0.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity aluMux0
+# -- Compiling architecture comb of aluMux0
+# End time: 14:20:29 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux1.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:20:29 on Jan 22,2022
+# vcom -reportprogress 300 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/aluMux1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity aluMux1
+# -- Compiling architecture comb of aluMux1
+# End time: 14:20:29 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/comparator_dc.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:20:29 on Jan 22,2022
+# vcom -reportprogress 300 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/comparator_dc.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity comparator_dc
+# -- Compiling architecture behavior of comparator_dc
+# End time: 14:20:30 on Jan 22,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/comparator_per.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:20:30 on Jan 22,2022
+# vcom -reportprogress 300 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/comparator_per.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity comparator_per
+# -- Compiling architecture behavior of comparator_per
+# End time: 14:20:30 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/CPU_Controller.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:20:30 on Jan 22,2022
+# vcom -reportprogress 300 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/CPU_Controller.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity CPU_Controller
+# -- Compiling architecture bdf_type of CPU_Controller
+# End time: 14:20:30 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/cpu_controller_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:20:31 on Jan 22,2022
+# vcom -reportprogress 300 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/cpu_controller_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cpu_controller_tb
+# -- Compiling architecture tb of cpu_controller_tb
+# End time: 14:20:31 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/cycle_counter.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:20:31 on Jan 22,2022
+# vcom -reportprogress 300 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/cycle_counter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity cycle_counter
+# -- Compiling architecture RTL of cycle_counter
+# End time: 14:20:31 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:20:31 on Jan 22,2022
+# vcom -reportprogress 300 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/decoder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling entity decoder
+# -- Compiling architecture RTL of decoder
+# End time: 14:20:31 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/instruction_register.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:20:31 on Jan 22,2022
+# vcom -reportprogress 30 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/instruction_register.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity instruction_register
+# -- Compiling architecture rtl of instruction_register
+# End time: 14:20:31 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/memMux.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:20:32 on Jan 22,2022
+# vcom -reportprogress 30 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/memMux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity memMux
+# -- Compiling architecture comb of memMux
+# End time: 14:20:32 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/mux_0.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:20:32 on Jan 22,2022
+# vcom -reportprogress 30 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/mux_0.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux_0
+# -- Compiling architecture bdf_type of mux_0
+# ** Error (suppressible): C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/mux_0.vhd(42): (vcom-1141) Identifier "mux" does not identify a component declaration.
+# ** Note: C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/mux_0.vhd(48): VHDL Compiler exiting
+# End time: 14:20:32 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 30 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/program_counter.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:20:32 on Jan 22,2022
+# vcom -reportprogress 30 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/program_counter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity program_counter
+# -- Compiling architecture rtl of program_counter
+# End time: 14:20:32 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_controller.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:20:32 on Jan 22,2022
+# vcom -reportprogress 30 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_controller.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity pwm_controller
+# -- Compiling architecture RTL of pwm_controller
+# End time: 14:20:32 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_counter.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:20:32 on Jan 22,2022
+# vcom -reportprogress 30 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_counter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity pwm_counter
+# -- Compiling architecture behavior of pwm_counter
+# End time: 14:20:33 on Jan 22,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_generator.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:20:33 on Jan 22,2022
+# vcom -reportprogress 30 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_generator.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity pwm_generator
+# -- Compiling architecture bdf_type of pwm_generator
+# End time: 14:20:33 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_generator_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:20:33 on Jan 22,2022
+# vcom -reportprogress 30 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwm_generator_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity pwm_generator_tb
+# -- Compiling architecture tb of pwm_generator_tb
+# End time: 14:20:33 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:20:33 on Jan 22,2022
+# vcom -reportprogress 30 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/pwmDemux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity pwmDemux
+# -- Compiling architecture comb of pwmDemux
+# End time: 14:20:33 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/ram.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:20:33 on Jan 22,2022
+# vcom -reportprogress 30 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/ram.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ram
+# -- Compiling architecture rtl of ram
+# End time: 14:20:34 on Jan 22,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/RBCPU_16bit.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:20:34 on Jan 22,2022
+# vcom -reportprogress 30 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/RBCPU_16bit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity RBCPU_16bit
+# -- Compiling architecture bdf_type of RBCPU_16bit
+# End time: 14:20:34 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/rbcpu_16bit_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:20:34 on Jan 22,2022
+# vcom -reportprogress 30 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/rbcpu_16bit_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity rbcpu_16bit_tb
+# -- Compiling architecture tb of rbcpu_16bit_tb
+# End time: 14:20:34 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/reg_dc_per.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:20:34 on Jan 22,2022
+# vcom -reportprogress 30 -work work C:/Uni/Year4/EBAES/assignments/RBCPU_16bit/reg_dc_per.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity reg_dc_per
+# -- Compiling architecture behavior of reg_dc_per
+# End time: 14:20:34 on Jan 22,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim -gui -l msim_transcript work.rbcpu_16bit_tb -t ns
+# vsim -gui -l msim_transcript work.rbcpu_16bit_tb -t ns 
+# Start time: 14:20:58 on Jan 22,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.rbcpu_16bit_tb(tb)
+# Loading work.rbcpu_16bit(bdf_type)
+# Loading work.cpu_controller(bdf_type)
+# Loading work.decoder(rtl)
+# Loading work.cycle_counter(rtl)
+# Loading work.program_counter(rtl)
+# Loading work.alumux0(comb)
+# Loading work.alumux1(comb)
+# Loading work.ram(rtl)
+# Loading work.accumulator(rtl)
+# Loading work.alu(comb)
+# Loading work.instruction_register(rtl)
+# Loading work.pwmdemux(comb)
+# Loading work.pwm_generator(bdf_type)
+# Loading work.pwm_controller(rtl)
+# Loading work.comparator_dc(behavior)
+# Loading work.reg_dc_per(behavior)
+# Loading work.comparator_per(behavior)
+# Loading work.pwm_counter(behavior)
+# Loading work.memmux(comb)
+add wave -position insertpoint sim:/rbcpu_16bit_tb/*
+run 100000
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /rbcpu_16bit_tb/DUT/b2v_inst6/b2v_inst3
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /rbcpu_16bit_tb/DUT/b2v_inst6/b2v_inst3
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /rbcpu_16bit_tb/DUT/b2v_inst6/b2v_inst1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /rbcpu_16bit_tb/DUT/b2v_inst6/b2v_inst1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rbcpu_16bit_tb/DUT/b2v_inst13
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /rbcpu_16bit_tb/DUT/b2v_inst6/b2v_inst1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /rbcpu_16bit_tb/DUT/b2v_inst6/b2v_inst3
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 0  Instance: /rbcpu_16bit_tb/DUT/b2v_inst21
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 2  Instance: /rbcpu_16bit_tb/DUT/b2v_inst21
+run 30000
+# End time: 14:24:18 on Jan 22,2022, Elapsed time: 0:03:20
+# Errors: 0, Warnings: 9

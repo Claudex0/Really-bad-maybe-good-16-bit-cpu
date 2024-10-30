@@ -1,0 +1,177 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 64 64 272 368)
+	(text "decoder" (rect 5 0 43 12)(font "Arial" ))
+	(text "inst" (rect 8 288 25 300)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "nrst" (rect 0 0 18 12)(font "Arial" ))
+		(text "nrst" (rect 21 27 39 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 43 35 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "cycl_phs" (rect 0 0 44 12)(font "Arial" ))
+		(text "cycl_phs" (rect 21 59 65 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "co" (rect 0 0 11 12)(font "Arial" ))
+		(text "co" (rect 21 75 32 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "OpCode[3..0]" (rect 0 0 66 12)(font "Arial" ))
+		(text "OpCode[3..0]" (rect 21 91 87 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 208 32)
+		(output)
+		(text "pc_cnt" (rect 0 0 33 12)(font "Arial" ))
+		(text "pc_cnt" (rect 160 27 187 39)(font "Arial" ))
+		(line (pt 208 32)(pt 192 32))
+	)
+	(port
+		(pt 208 48)
+		(output)
+		(text "pc_ld" (rect 0 0 25 12)(font "Arial" ))
+		(text "pc_ld" (rect 166 43 187 55)(font "Arial" ))
+		(line (pt 208 48)(pt 192 48))
+	)
+	(port
+		(pt 208 64)
+		(output)
+		(text "pwn_en" (rect 0 0 36 12)(font "Arial" ))
+		(text "pwn_en" (rect 157 59 187 71)(font "Arial" ))
+		(line (pt 208 64)(pt 192 64))
+	)
+	(port
+		(pt 208 80)
+		(output)
+		(text "ir_ld" (rect 0 0 20 12)(font "Arial" ))
+		(text "ir_ld" (rect 171 75 187 87)(font "Arial" ))
+		(line (pt 208 80)(pt 192 80))
+	)
+	(port
+		(pt 208 96)
+		(output)
+		(text "ir_clr" (rect 0 0 23 12)(font "Arial" ))
+		(text "ir_clr" (rect 168 91 187 103)(font "Arial" ))
+		(line (pt 208 96)(pt 192 96))
+	)
+	(port
+		(pt 208 112)
+		(output)
+		(text "we" (rect 0 0 12 12)(font "Arial" ))
+		(text "we" (rect 177 107 187 119)(font "Arial" ))
+		(line (pt 208 112)(pt 192 112))
+	)
+	(port
+		(pt 208 128)
+		(output)
+		(text "memMux_sel" (rect 0 0 64 12)(font "Arial" ))
+		(text "memMux_sel" (rect 133 123 187 135)(font "Arial" ))
+		(line (pt 208 128)(pt 192 128))
+	)
+	(port
+		(pt 208 144)
+		(output)
+		(text "demux_sel" (rect 0 0 53 12)(font "Arial" ))
+		(text "demux_sel" (rect 143 139 187 151)(font "Arial" ))
+		(line (pt 208 144)(pt 192 144))
+	)
+	(port
+		(pt 208 160)
+		(output)
+		(text "aluMux0_sel" (rect 0 0 60 12)(font "Arial" ))
+		(text "aluMux0_sel" (rect 137 155 187 167)(font "Arial" ))
+		(line (pt 208 160)(pt 192 160))
+	)
+	(port
+		(pt 208 176)
+		(output)
+		(text "aluMux1_sel" (rect 0 0 60 12)(font "Arial" ))
+		(text "aluMux1_sel" (rect 137 171 187 183)(font "Arial" ))
+		(line (pt 208 176)(pt 192 176))
+	)
+	(port
+		(pt 208 192)
+		(output)
+		(text "acu_ld" (rect 0 0 31 12)(font "Arial" ))
+		(text "acu_ld" (rect 161 187 187 199)(font "Arial" ))
+		(line (pt 208 192)(pt 192 192))
+	)
+	(port
+		(pt 208 208)
+		(output)
+		(text "acu_clr" (rect 0 0 35 12)(font "Arial" ))
+		(text "acu_clr" (rect 158 203 187 215)(font "Arial" ))
+		(line (pt 208 208)(pt 192 208))
+	)
+	(port
+		(pt 0 112)
+		(output)
+		(text "cycl_clr" (rect 0 0 38 12)(font "Arial" ))
+		(text "cycl_clr" (rect 24 104 62 116)(font "Arial" ))
+		(line (pt 16 112)(pt 0 112))
+	)
+	(port
+		(pt 0 128)
+		(output)
+		(text "cycle_cnt" (rect 0 0 48 12)(font "Arial" ))
+		(text "cycle_cnt" (rect 24 120 72 132)(font "Arial" ))
+		(line (pt 16 128)(pt 0 128))
+	)
+	(port
+		(pt 208 256)
+		(output)
+		(text "pc_clr" (rect 0 0 29 12)(font "Arial" ))
+		(text "pc_clr" (rect 163 251 187 263)(font "Arial" ))
+		(line (pt 208 256)(pt 192 256))
+	)
+	(port
+		(pt 208 272)
+		(output)
+		(text "alu_sel[3..0]" (rect 0 0 60 12)(font "Arial" ))
+		(text "alu_sel[3..0]" (rect 137 267 187 279)(font "Arial" ))
+		(line (pt 208 272)(pt 192 272)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 192 288))
+	)
+)

@@ -1,0 +1,230 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_arith.all;
+
+ENTITY DECODER IS
+	
+	PORT( 
+		nrst,clk:in  std_logic;
+		OpCode:in  std_logic_vector(3 downto 0);
+		pc_cnt,pwn_en,ir_ld,rw,memMux_sel,demux_sel,aluMux0_sel,aluMux1_sel,acu_ld,:out std_logic;
+		alu_sel :out std_logic_vector(3 downto 0)
+	);
+END DECODER;
+
+ARCHITECTURE RTL OF DECODER IS
+	type state is (Su, S0, S1, S2, S3, S4, S5, S6, S7, S8, S9,S10,S11,S12,S13,S14,S15,S16); --Su = State uninitialized 
+	
+	signal present_state, next_state : state;
+BEGIN
+	--next state decoder
+	next_state_dec_proc:
+	process(present_state,OpCode)
+		variable n_s : state;
+	begin
+		case present_state is
+			when s0 => 
+				if (OpCode="0000") then n_s:=S1;
+				elsif (OpCode="0001") then n_s:=S2;
+				elsif (OpCode="0010") then n_s:=S3;
+				elsif (OpCode="0011") then n_s:=S4;
+				elsif (OpCode="0100") then n_s:=S5;
+				elsif (OpCode="0101") then n_s:=S6;
+				elsif (OpCode="0110") then n_s:=S7;
+				elsif (OpCode="0111") then n_s:=S8;
+				elsif (OpCode="1000") then n_s:=S9;
+				elsif (OpCode="1001") then n_s:=S10;
+				elsif (OpCode="1010") then n_s:=S11;
+				elsif (OpCode="1011") then n_s:=S12;
+				elsif (OpCode="1100") then n_s:=S13;
+				elsif (OpCode="1101") then n_s:=S14;
+				elsif (OpCode="1110") then n_s:=S15;
+				elsif (OpCode="1111") then n_s:=S16;
+				else n_s:=S0;
+				end if;
+			when s1 =>	n_s:=S0;
+			when s2 =>	n_s:=S0;
+			when s3 =>	n_s:=S0;
+			when s4 =>	n_s:=S0;
+			when s5 =>	n_s:=S0;
+			when s6 =>	n_s:=S0;
+			when s7 =>	n_s:=S0;
+			when s8 =>	n_s:=S0;
+			when s9 =>	n_s:=S0;
+			when s10 =>	n_s:=S0;
+			when s11 =>	n_s:=S0;
+			when s12 =>	n_s:=S0;
+			when s13 =>	n_s:=S0;
+			when s14 =>	n_s:=S0;
+			when s15 =>	n_s:=S0;
+			when s16 =>	n_s:=S0;
+			when others => n_s := Su;
+		end case;
+		next_state <= n_s after 5 ns;
+	end process;
+	
+	
+	--memory
+	mem_proc:
+	process(nrst,clk)
+	begin
+		if nrst = '1' then
+			present_state <= S0 after 5 ns;
+		elsif rising_edge(clk) then
+			present_state <= next_state after 5 ns;
+		end if;
+	end process;
+	
+	
+	--output decoder
+	output_dec_proc:
+	process(present_state)	
+	begin
+		case present_state is
+			when s0 => --initial state
+				CPU_C<='0' after 5 ns;
+				mux_sel<='1' after 5 ns;
+				In_Reg1<='0' after 5 ns;
+				In_Reg2<='0' after 5 ns;
+				Out_Reg<='0' after 5 ns;
+				PWM_EN<='0' after 5 ns;
+				alu_sel<="1011" after 5 ns;--ALU do nothing	
+			when s1 => -- Do Nothing
+				CPU_C<='1' after 5 ns;
+				mux_sel<='1' after 5 ns;
+				In_Reg1<='0' after 5 ns;
+				In_Reg2<='0' after 5 ns;
+				Out_Reg<='0' after 5 ns;
+				PWM_EN<='0' after 5 ns;
+				alu_sel<="1011" after 5 ns;--ALU do nothing
+			when s2 => -- load
+				CPU_C<='1' after 5 ns;
+				mux_sel<='0' after 5 ns;
+				In_Reg1<='1' after 5 ns;
+				In_Reg2<='1' after 5 ns;
+				Out_Reg<='0' after 5 ns;
+				PWM_EN<='0' after 5 ns;
+				alu_sel<="1011" after 5 ns;--ALU do nothing
+			when s3 => --addition
+				CPU_C<='1' after 5 ns;
+				mux_sel<='1' after 5 ns;
+				In_Reg1<='0' after 5 ns;
+				In_Reg2<='0' after 5 ns;
+				Out_Reg<='0' after 5 ns;
+				PWM_EN<='0' after 5 ns;
+				alu_sel<="0000" after 5 ns;--ADD
+			when s4 => --Subtraction						
+				CPU_C<='1' after 5 ns;
+				mux_sel<='1' after 5 ns;
+				In_Reg1<='0' after 5 ns;
+				In_Reg2<='0' after 5 ns;
+				Out_Reg<='0' after 5 ns;
+				PWM_EN<='0' after 5 ns;
+				alu_sel<="0001" after 5 ns;--SUB	
+			when s5 => --PWM 		-- PWM STATE CURRENTLY NOT IMPLEMENTED
+				CPU_C<='1' after 5 ns;
+				mux_sel<='1' after 5 ns;
+				In_Reg1<='0' after 5 ns;
+				In_Reg2<='0' after 5 ns;
+				Out_Reg<='0' after 5 ns;
+				PWM_EN<='1' after 5 ns;
+				alu_sel<="1011" after 5 ns;--ALU do nothing
+			when s6 => --division
+				CPU_C<='1' after 5 ns;
+				mux_sel<='1' after 5 ns;
+				In_Reg1<='0' after 5 ns;
+				In_Reg2<='0' after 5 ns;
+				Out_Reg<='0' after 5 ns;
+				PWM_EN<='0' after 5 ns;
+				alu_sel<="0010" after 5 ns;--DIV
+			when s7 => -- multiplication
+				CPU_C<='1' after 5 ns;
+				mux_sel<='1' after 5 ns;
+				In_Reg1<='0' after 5 ns;
+				In_Reg2<='0' after 5 ns;
+				Out_Reg<='0' after 5 ns;
+				PWM_EN<='0' after 5 ns;
+				alu_sel<="0011" after 5 ns;--MULT
+			when s8 => -- store into Reg2
+				CPU_C<='1' after 5 ns;
+				mux_sel<='1' after 5 ns;
+				In_Reg1<='0' after 5 ns;
+				In_Reg2<='0' after 5 ns;
+				Out_Reg<='1' after 5 ns;
+				PWM_EN<='0' after 5 ns;
+				alu_sel<="1011" after 5 ns;--ALU do nothing
+			when s9 => --shift left
+				CPU_C<='1' after 5 ns;
+				mux_sel<='1' after 5 ns;
+				In_Reg1<='0' after 5 ns;
+				In_Reg2<='0' after 5 ns;
+				Out_Reg<='0' after 5 ns;
+				PWM_EN<='0' after 5 ns;
+				alu_sel<="1001" after 5 ns;--shift left
+			when s10 => --shift right
+				CPU_C<='1' after 5 ns;
+				mux_sel<='1' after 5 ns;
+				In_Reg1<='0' after 5 ns;
+				In_Reg2<='0' after 5 ns;
+				Out_Reg<='0' after 5 ns;
+				PWM_EN<='0' after 5 ns;
+				alu_sel<="1010" after 5 ns;--shift right
+			when s11 => --invert
+				CPU_C<='1' after 5 ns;
+				mux_sel<='1' after 5 ns;
+				In_Reg1<='0' after 5 ns;
+				In_Reg2<='0' after 5 ns;
+				Out_Reg<='0' after 5 ns;
+				PWM_EN<='0' after 5 ns;
+				alu_sel<="0100" after 5 ns;--invert
+			when s12 => --increment by 1
+				CPU_C<='1' after 5 ns;
+				mux_sel<='1' after 5 ns;
+				In_Reg1<='0' after 5 ns;
+				In_Reg2<='0' after 5 ns;
+				Out_Reg<='0' after 5 ns;
+				PWM_EN<='0' after 5 ns;
+				alu_sel<="0101" after 5 ns;--inc1
+			when s13 => --decrement by 1
+				CPU_C<='1' after 5 ns;
+				mux_sel<='1' after 5 ns;
+				In_Reg1<='0' after 5 ns;
+				In_Reg2<='0' after 5 ns;
+				Out_Reg<='0' after 5 ns;
+				PWM_EN<='0' after 5 ns;
+				alu_sel<="0110" after 5 ns;--dec1
+			when s14 => -- load r1
+				CPU_C<='1' after 5 ns;
+				mux_sel<='1' after 5 ns;
+				In_Reg1<='1' after 5 ns;
+				In_Reg2<='0' after 5 ns;
+				Out_Reg<='0' after 5 ns;
+				PWM_EN<='0' after 5 ns;
+				alu_sel<="1011" after 5 ns;--ALU do nothing
+			when s15 => --AND
+				CPU_C<='1' after 5 ns;
+				mux_sel<='1' after 5 ns;
+				In_Reg1<='0' after 5 ns;
+				In_Reg2<='0' after 5 ns;
+				Out_Reg<='0' after 5 ns;
+				PWM_EN<='0' after 5 ns;
+				alu_sel<="0111" after 5 ns;--AND
+			when s16 => -- or
+				CPU_C<='1' after 5 ns;
+				mux_sel<='1' after 5 ns;
+				In_Reg1<='0' after 5 ns;
+				In_Reg2<='0' after 5 ns;
+				Out_Reg<='0' after 5 ns;
+				PWM_EN<='0' after 5 ns;
+				alu_sel<="1000" after 5 ns;--OR
+			when others => 
+				CPU_C<='X' after 5 ns;
+				mux_sel<='X' after 5 ns;
+				In_Reg1<='X' after 5 ns;
+				In_Reg2<='X' after 5 ns;
+				Out_Reg<='X' after 5 ns;
+				PWM_EN<='X' after 5 ns;
+				alu_sel<="XXXX" after 5 ns;   
+		end case;
+	end process;	
+END ARCHITECTURE;
