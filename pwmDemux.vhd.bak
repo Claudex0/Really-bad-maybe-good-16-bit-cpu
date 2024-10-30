@@ -1,0 +1,24 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use IEEE.STD_LOGIC_UNSIGNED.all;
+
+ENTITY pwmDemux IS
+   PORT
+   (
+      pwmDemuxir_input: in std_logic_vector (11 downto 0);
+		pwmDemux_sel:in std_logic;
+		pwmDemux_output: out std_logic_vector (11 downto 0)
+   );
+END pwmDemux;
+ARCHITECTURE comb OF pwmDemux IS
+BEGIN
+   PROCESS (aluMux1_sel,aluMux1acc_input,aluMux1ram_input)
+	begin
+		if (aluMux1_sel='0') then
+			aluMux1_output<=aluMux1acc_input;
+		elsif (aluMux1_sel='1') then
+			aluMux1_output<=aluMux1ram_input;
+		end if;
+   END PROCESS;
+END comb;

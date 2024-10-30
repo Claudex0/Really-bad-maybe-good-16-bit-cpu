@@ -1,0 +1,28 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+ENTITY accumulator IS
+   PORT
+   (
+      clk,acu_clr,acu_ld: IN   std_logic;
+      acu_in:  IN   std_logic_vector (15 DOWNTO 0);
+      acu_out:     OUT  std_logic_vector (15 DOWNTO 0)
+   );
+END accumulator;
+ARCHITECTURE rtl OF accumulator IS
+BEGIN
+   PROCESS (clk,acu_clr)
+	variable store:std_logic_vector(15 downto 0);
+   BEGIN
+		if (acu_clr='1') then
+			acu_out<="0000000000000000";
+			store:="0000000000000000";
+		else
+			if (rising_edge(clk)) then
+				if(acu_ld='1') then
+					store:=acu_in;
+				end if;
+				acu_out<=store after 5 ns;
+			end if;
+		end if;				
+   END PROCESS;
+END rtl;

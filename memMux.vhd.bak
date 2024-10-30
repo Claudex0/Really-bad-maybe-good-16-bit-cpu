@@ -1,0 +1,24 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use IEEE.STD_LOGIC_UNSIGNED.all;
+
+ENTITY memMux IS
+   PORT
+   (
+      ir_input,pc_input: in std_logic_vector (3 downto 0);
+		sel:in std_logic;
+		output: out std_logic_vector (3 downto 0)
+   );
+END memMux;
+ARCHITECTURE comb OF memMux IS
+BEGIN
+   PROCESS (sel,ir_input,pc_input)
+	begin
+		if (sel='0') then
+			output<=pc_input;
+		elsif (sel='1') then
+			output<=ir_input;
+		end if;
+   END PROCESS;
+END comb;

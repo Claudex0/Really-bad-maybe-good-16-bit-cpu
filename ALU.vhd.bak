@@ -1,0 +1,17 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use ieee.numeric_std.all;
+
+ENTITY ALU IS
+	
+	PORT( 
+		alu_sel:in  std_logic_vector(3 downto 0);
+		aluMux0_input,aluMux1_input: in std_logic_vector(11 downto 0);
+		zero,overflow:out std_logic;
+		ALU_OUT :out std_logic_vector(11 downto 0)
+	);
+END ALU;
+
+ARCHITECTURE Comb OF ALU IS
+BEGIN
